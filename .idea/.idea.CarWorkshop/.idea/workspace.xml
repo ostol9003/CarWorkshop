@@ -9,8 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8164476d-4752-4db1-94ef-06ac3359c1dd" name="Changes" comment="EditMapper">
-      <change beforePath="$PROJECT_DIR$/CarWorkshop.MVC/bin/Debug/net7.0/CarWorkshop.MVC.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarWorkshop.MVC/bin/Debug/net7.0/CarWorkshop.MVC.runtimeconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarWorkshop.MVC/bin/Debug/net7.0/CarWorkshop.MVC.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/CarWorkshop.MVC/bin/Debug/net7.0/CarWorkshop.MVC.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CarWorkshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarWorkshop/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +42,14 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "dotNetConsole",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "GitIgnore"
+    ],
     "rider.external.source.directories": [
       "/Users/Ostol/Library/Application Support/JetBrains/Rider2023.2/resharper-host/DecompilerCache",
       "/Users/Ostol/Library/Application Support/JetBrains/Rider2023.2/resharper-host/SourcesCache",
@@ -113,7 +117,7 @@
       <workItem from="1698865692341" duration="137000" />
       <workItem from="1698865886159" duration="486000" />
       <workItem from="1698866420124" duration="409000" />
-      <workItem from="1698867128671" duration="797000" />
+      <workItem from="1698867128671" duration="1810000" />
     </task>
     <task id="LOCAL-00001" summary="EditMapper">
       <option name="closed" value="true" />

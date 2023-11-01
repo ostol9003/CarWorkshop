@@ -1,5 +1,6 @@
 /.idea/
-/ .bin/
-/ .git/
 .gitignore
-/.Extensions/
+/CarWorkshop.Application/bin/
+/CarWorkshop.Domain/bin/
+/CarWorkshop.Infrastructure/bin/
+/CarWorkshop.MVC/bin/
