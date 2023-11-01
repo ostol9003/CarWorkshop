@@ -1,0 +1,26 @@
+﻿using CarWorkshop.Domain.Interfaces;
+using CarWorkshop.Infrastructure.Persistance;
+using CarWorkshop.Infrastructure.Repositories;
+using CarWorkshop.Infrastructure.Seeders;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace CarWorkshop.Infrastructure.Extensions
+{
+    public static class ServiceCollectionExtension
+    {
+        public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<CarWorkshopDbContext>(option => option.UseSqlServer(configuration.GetConnectionString("CarWorkshop")));
+
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<CarWorkshopDbContext>();
+
+            services.AddScoped<CarWorkshopSeeder>();
+            services.AddScoped<ICarWorkshopRepository, CarWorkshopRepository>();
+        }
+    }
+}

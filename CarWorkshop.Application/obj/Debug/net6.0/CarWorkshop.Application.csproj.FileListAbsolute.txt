@@ -1,0 +1,4 @@
+Z:\Desktop\UDEMY\C#\CarWorkshop\CarWorkshop.Application\obj\Debug\net6.0\CarWorkshop.Application.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Desktop\UDEMY\C#\CarWorkshop\CarWorkshop.Application\obj\Debug\net6.0\CarWorkshop.Application.AssemblyInfoInputs.cache
+Z:\Desktop\UDEMY\C#\CarWorkshop\CarWorkshop.Application\obj\Debug\net6.0\CarWorkshop.Application.AssemblyInfo.cs
+Z:\Desktop\UDEMY\C#\CarWorkshop\CarWorkshop.Application\obj\Debug\net6.0\CarWorkshop.Application.csproj.CoreCompileInputs.cache
