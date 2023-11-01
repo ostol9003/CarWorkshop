@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using AutoMapper;
 using CarWorkshop.Application.AplicationUser;
 using CarWorkshop.Domain.Interfaces;
 using MediatR;

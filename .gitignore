@@ -4,3 +4,7 @@
 /CarWorkshop.Domain/bin/
 /CarWorkshop.Infrastructure/bin/
 /CarWorkshop.MVC/bin/
+/CarWorkshop.Application/obj/
+/CarWorkshop.Domain/obj/
+/CarWorkshop.Infrastructure/obj/
+/CarWorkshop.MVC/obj/
