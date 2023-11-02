@@ -22,22 +22,19 @@ namespace CarWorkshop.Application.CarWorkshop.Commands.EditCarWorkshop
             var carWorkshop = await _carWorkshopRepository.GetByEncodedName(request.EncodedName);
 
             var user = _userContext.GetCurrentUser();
-            var isEditable = user != null && carWorkshop.CreatedById == user.Id;
+            var isEditable = user != null && (carWorkshop.CreatedById == user.Id || user.IsInRole("Moderator"));
             
             if (!isEditable)
             {
                 return;
             }
             _mapper.Map(request, carWorkshop);
-
-
             //carWorkshop.Description = request.Description;
             //carWorkshop.About = request.About;
             //carWorkshop.ContactDetails.City = request.City;
             //carWorkshop.ContactDetails.PhoneNumber = request.PhoneNumber;
             //carWorkshop.ContactDetails.PostalCode = request.PostalCode;
             //carWorkshop.ContactDetails.Street = request.Street;
-
             await _carWorkshopRepository.Commit();
 
         }

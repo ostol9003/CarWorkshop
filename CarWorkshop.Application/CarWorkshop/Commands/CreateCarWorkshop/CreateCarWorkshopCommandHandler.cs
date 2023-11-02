@@ -1,6 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using CarWorkshop.Application.AplicationUser;
 using CarWorkshop.Domain.Interfaces;
 using MediatR;
@@ -23,7 +21,7 @@ namespace CarWorkshop.Application.CarWorkshop.Commands.CReateCarWorkshop
         public async Task Handle(CreateCarWorkshopCommand request, CancellationToken cancellationToken)
         {
             var currentUser = _userContext.GetCurrentUser();
-            if (currentUser == null || !currentUser.IsInRole("Owner"))
+            if (currentUser == null || !currentUser.IsInRole("Owner") || !currentUser.IsInRole("Moderator"))
             {
                 return;
             }

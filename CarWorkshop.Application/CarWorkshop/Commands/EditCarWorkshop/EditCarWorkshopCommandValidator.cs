@@ -1,5 +1,4 @@
-﻿using CarWorkshop.Domain.Interfaces;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace CarWorkshop.Application.CarWorkshop.Commands.EditCarWorkshop
 {

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using CarWorkshop.Domain.Interfaces;
+﻿using CarWorkshop.Domain.Interfaces;
 using CarWorkshop.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 

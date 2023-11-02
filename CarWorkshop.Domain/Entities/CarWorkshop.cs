@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace CarWorkshop.Domain.Entities
 {
@@ -14,6 +13,8 @@ namespace CarWorkshop.Domain.Entities
         public string? About { get; set; }
         public string? CreatedById { get; set; }
         public IdentityUser? CreatedBy { get; set; }
+
+        public List<CarWorkshopService> Services { get; set; } = new();
         public void EncodeName() => EncodedName = Name.ToLower().Replace(" ", "_");
     }
 }

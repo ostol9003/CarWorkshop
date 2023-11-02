@@ -1,8 +1,6 @@
-using CarWorkshop.Infrastructure.Extensions;
 using CarWorkshop.Application.Extensions;
-using CarWorkshop.Infrastructure.Persistance;
+using CarWorkshop.Infrastructure.Extensions;
 using CarWorkshop.Infrastructure.Seeders;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,12 +13,8 @@ builder.Services.AddApplication();
 
 
 var app = builder.Build();
-
 var scope = app.Services.CreateScope();
-
 var seeder = scope.ServiceProvider.GetRequiredService<CarWorkshopSeeder>();
-
-
 await seeder.Seed();
 
 // Configure the HTTP request pipeline.
