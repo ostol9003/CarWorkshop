@@ -1,4 +1,5 @@
-﻿@model CarWorkshop.Application.CarWorkshop.CarWorkshopDto
+﻿@using Microsoft.CodeAnalysis.Scripting
+@model CarWorkshop.Application.CarWorkshop.CarWorkshopDto
 
 @{
     ViewData["Title"] = "Deatils";
@@ -50,12 +51,24 @@
 
     </dl>
 </div>
-<div>
-    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
 
+
+<div>
     @if (Model.IsEditable)
     {
         <a class="btn btn-outline-secondary" asp-controller="CarWorkshop" asp-action="Edit" asp-route-encodedName="@Model.EncodedName">Edit</a>
     }
-
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
 </div>
+
+<h4>Services:</h4>
+<div id="services" class="row" data-encoded-name="@Model.EncodedName"></div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/CarWorkshop/details.js"></script>
+
+}

@@ -1,4 +1,5 @@
-﻿@model CarWorkshop.Application.CarWorkshop.Commands.EditCarWorkshop.EditCarWorkshopCommand
+﻿@using CarWorkshop.Application.CarWorkshopService.Command
+@model CarWorkshop.Application.CarWorkshop.Commands.EditCarWorkshop.EditCarWorkshopCommand
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,14 +14,14 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             
-       @if (User.IsInRole("Moderator"))
-           {
-               <div class="form-group m-3">
-                   <label asp-for="Name" class="control-label"></label>
-                   <input asp-for="Name" class="form-control" />
-                   <span asp-validation-for="Name" class="text-danger"></span>
-               </div>
-           }
+            @if (User.IsInRole("Moderator"))
+            {
+                <div class="form-group m-3">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            }
        
             <div class="form-group m-3">
                 <label asp-for="Description" class="control-label"></label>
@@ -52,17 +53,23 @@
                 <input asp-for="PostalCode" class="form-control" />
                 <span asp-validation-for="PostalCode" class="text-danger"></span>
             </div>
-            <div class="form-group m-3">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
         </form>
+        <div class="form-group m-3">
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <partial name="_CreateCarWorkshopService" model="new CreateCarWorkshopServiceCommand(){CarWorkshopEncodedName = Model.EncodedName!}" />
+            <a asp-action="Index" class="btn btn-secondary" >Back</a>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-</div>
+
+
+<h4>Services:</h4>
+<div id="services" class="row" data-encoded-name="@Model.EncodedName"></div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/CarWorkshop/edit.js"></script>
+
 }

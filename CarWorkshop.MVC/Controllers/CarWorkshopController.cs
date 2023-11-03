@@ -1,8 +1,11 @@
-﻿using AutoMapper;
+﻿using System.Drawing;
+using AutoMapper;
 using CarWorkshop.Application.CarWorkshop.Commands.CReateCarWorkshop;
 using CarWorkshop.Application.CarWorkshop.Commands.EditCarWorkshop;
 using CarWorkshop.Application.CarWorkshop.Queries.GetAllCarWorkshops;
 using CarWorkshop.Application.CarWorkshop.Queries.GetCarWorkshopByEncodedName;
+using CarWorkshop.Application.CarWorkshopService.Command;
+using CarWorkshop.Application.CarWorkshopService.Querries;
 using CarWorkshop.MVC.Extensions;
 using CarWorkshop.MVC.Models;
 using MediatR;
@@ -104,5 +107,33 @@ namespace CarWorkshop.MVC.Controllers
         }
 
         #endregion
+
+        #region CreateCarWorkshopService
+        [HttpPost]
+        [Authorize(Roles = "Owner,Moderator")]
+        [Route("CarWorkshop/CarWorkshopService")]
+        public async Task<IActionResult> CreateCarWorkshopService(CreateCarWorkshopServiceCommand command)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _mediator.Send(command);
+            this.SetNotification("success", $"Created carworkshop service");
+
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("CarWorkshop/{encodedName}/CarWorkshopService")]
+        public async Task<IActionResult> GetCarWorkshopService(string encodedName)
+        {
+            var data = await _mediator.Send(new GetCarWorkshopServiceQuery() { EncodedName = encodedName });
+            return Ok(data);
+        }
+
+        #endregion
+
     }
 }

@@ -21,7 +21,10 @@ namespace CarWorkshop.Application.Extensions
                 var scope = provider.CreateScope();
                 var userContext = scope.ServiceProvider.GetRequiredService<IUserContext>();
                 cfg.AddProfile(new CarWorkshopMappingProfile(userContext));
+                cfg.AddProfile(new CarWorkshopServiceMappingProfile(userContext));
             }).CreateMapper());
+
+           
 
             services.AddValidatorsFromAssemblyContaining<CreateCarWorkshopCommandValidator>()
                 .AddFluentValidationAutoValidation()
