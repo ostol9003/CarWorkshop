@@ -1,5 +1,5 @@
 /.idea/
-.vs
+/.vs/
 .gitignore
 /CarWorkshop.Application/bin/
 /CarWorkshop.Domain/bin/
