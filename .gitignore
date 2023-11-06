@@ -12,3 +12,6 @@
 CarWorkshop.sln
 CarWorkshop.ApplicationTests2/obj/
 CarWorkshop.ApplicationTests2/bin/
+CarWorkshop.MVCTests/obj
+CarWorkshop.Domain.Tests/obj
+CarWorkshop.Domain.Tests/bin
