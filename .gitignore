@@ -10,4 +10,5 @@
 /CarWorkshop.Infrastructure/obj/
 /CarWorkshop.MVC/obj/
 CarWorkshop.sln
-CarWorkshop.sln.DotSettings.user
+CarWorkshop.ApplicationTests2/obj/
+CarWorkshop.ApplicationTests2/bin/
