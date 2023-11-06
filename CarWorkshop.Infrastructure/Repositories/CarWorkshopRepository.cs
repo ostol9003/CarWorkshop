@@ -1,4 +1,5 @@
-﻿using CarWorkshop.Domain.Interfaces;
+﻿using CarWorkshop.Domain.Entities;
+using CarWorkshop.Domain.Interfaces;
 using CarWorkshop.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 
